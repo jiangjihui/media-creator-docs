@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta charset="UTF-8">
+	<link rel="icon" href="_media/fly.svg">
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/core.min.css">
+	<script>
+		// 方案 A+B 结合：自动(跟随系统) / 浅色 / 深色 三态循环，localStorage 记忆
+		// core.min.css 为浅色底色，深色时叠加 core-dark.min.css 叠加层
+		(function () {
+			var DARK = '//cdn.jsdelivr.net/npm/docsify@5/dist/themes/addons/core-dark.min.css';
+			var KEY = 'theme'; // 取值：'auto' | 'light' | 'dark'
+			var MODES = ['auto', 'light', 'dark']; // 点击循环顺序
+			var darkLink = document.createElement('link');
+			darkLink.rel = 'stylesheet';
+			darkLink.href = DARK;
+			var mq = window.matchMedia('(prefers-color-scheme: dark)');
+
+			function currentMode() {
+				var s = localStorage.getItem(KEY);
+				return MODES.indexOf(s) >= 0 ? s : 'auto'; // 默认=自动
+			}
+			function isDark() {
+				var m = currentMode();
+				if (m === 'dark') return true;
+				if (m === 'light') return false;
+				return mq.matches; // auto → 跟随系统
+			}
+			function apply(dark) {
+				if (dark) {
+					if (!darkLink.parentNode) document.head.appendChild(darkLink);
+				} else if (darkLink.parentNode) {
+					darkLink.parentNode.removeChild(darkLink);
+				}
+			}
+			// 同步导航栏按钮文案
+			function syncLabel() {
+				var el = document.getElementById('themeToggle');
+				if (!el) return;
+				var m = currentMode();
+				el.textContent = m === 'auto' ? '🌗 自动'
+				               : m === 'dark' ? '🌙 深色'
+				               : '☀️ 浅色';
+			}
+			apply(isDark());
+
+			// 仅「自动」档时，跟随系统主题变化
+			var sysHandler = function (e) {
+				if (currentMode() === 'auto') { apply(e.matches); syncLabel(); }
+			};
+			if (mq.addEventListener) mq.addEventListener('change', sysHandler);
+			else if (mq.addListener) mq.addListener(sysHandler);
+
+			// 供导航栏按钮调用：在 自动→浅色→深色 间循环，并写入 localStorage
+			window.toggleTheme = function () {
+				var cur = currentMode();
+				var next = MODES[(MODES.indexOf(cur) + 1) % MODES.length];
+				localStorage.setItem(KEY, next);
+				apply(isDark());
+				syncLabel();
+			};
+
+			// 导航栏渲染后同步文案（docsify 每次渲染都会触发）
+			document.addEventListener('docsify:done', syncLabel);
+			// 兜底：navbar 元素尚未出现时轮询等待
+			(function wait() {
+				if (document.getElementById('themeToggle')) syncLabel();
+				else requestAnimationFrame(wait);
+			})();
+		})();
+	</script>
+	<style>
+		:root {
+			/* 移动端/触屏设备：内容区占满宽度 */
+			--content-max-width: 90%;
+		}
+		@media (pointer: fine) and (min-width: 1200px) {
+			:root {
+				/* 桌面端（宽屏+鼠标）：内容区收紧，阅读更舒适 */
+				--content-max-width: 70%;
+			}
+		}
+		/* 导航栏主题切换按钮：样式对齐其它导航项 */
+		#themeToggle {
+			color: inherit;
+			cursor: pointer;
+			user-select: none;
+		}
+		#themeToggle:hover {
+			opacity: .7;
+		}
+		/* Mermaid 节点标签：禁止换行。
+		   htmlLabels 默认用 foreignObject+HTML <div>，长文本会被浏览器按节点宽度自动折行；
+		   这里用 white-space:nowrap 强制单行，节点宽度由 mermaid 按内容自动撑开。 */
+		.mermaid foreignObject div {
+			white-space: nowrap !important;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app"></div>
+	<script>
+		window.$docsify = {
+		    // 配置仓库地址右上角挂件
+            repo: 'https://github.com/jiangjihui/media-creator-docs/',
+            // 启用封面页
+            coverpage: true,
+            // 加载自定义导航栏
+            loadNavbar: true,
+            // 加载自定义侧边栏
+            loadSidebar: true,
+            // 全文搜索插件
+            search: 'auto', // 默认值
+            // 开启文档自身目录（左侧 TOC，显示到 ### H3）
+            subMaxLevel: 3
+		};
+	</script>
+	<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/docsify.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/search.min.js"></script>
+    <!--Medium's 风格的图片缩放插件-->
+    <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/zoom.min.js"></script>
+    <!--复制代码到剪贴板-->
+    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@3"></script>
+    <!--添加额外的语法支持需要通过CDN添加相应的语法文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-docker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-groovy.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-nginx.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-sql.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-markup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-properties.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-lua.min.js"></script>
+    <!--Mermaid 图表渲染：加载 mermaid 并把文档内 ```mermaid 代码块转为 SVG-->
+    <script src="//cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+        function renderMermaid() {
+            if (typeof mermaid === 'undefined') return;
+            document.querySelectorAll('pre > code.language-mermaid').forEach(function (code) {
+                var pre = code.parentElement;
+                if (pre && !pre.querySelector('.mermaid-svg')) {
+                    var wrap = document.createElement('div');
+                    wrap.className = 'mermaid mermaid-svg';
+                    wrap.textContent = code.innerText || code.textContent;
+                    pre.replaceWith(wrap);
+                }
+            });
+            if (document.querySelectorAll('.mermaid-svg').length > 0) {
+                mermaid.run({ nodes: document.querySelectorAll('.mermaid-svg') });
+            }
+        }
+        // docsify 每次路由切换渲染完页面后，把 mermaid 代码块转成图
+        // 注意：必须往现有 plugins 数组【追加】，不能整体覆盖（Object.assign 重写 plugins 会冲掉
+        // search.min.js 注册的搜索插件，导致侧边栏搜索框消失）。search / copy-code 等插件均通过
+        // window.$docsify.plugins 注册，这里合并而非替换。
+        window.$docsify.plugins = (window.$docsify.plugins || []).concat([function (hook) {
+            hook.doneEach(function () {
+                setTimeout(renderMermaid, 0);
+            });
+        }]);
+    </script>
+</body>
+
+</html>
