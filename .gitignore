@@ -1,3 +1,18 @@
+# ---- 操作系统 ----
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# ---- WorkBuddy 项目数据（记忆/工作笔记/本地配置，不提交）----
+.workbuddy/
+
+# ---- Node / 前端工具 ----
+node_modules/
+*.log
+npm-debug.log*
+
+# ---- 编辑器 / IDE ----
+.vscode/
+.idea/
+*.swp
+*.swo
