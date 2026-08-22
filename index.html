@@ -115,11 +115,23 @@
 		#themeToggle:hover {
 			opacity: .7;
 		}
-		/* Mermaid 节点标签：禁止换行。
-		   htmlLabels 默认用 foreignObject+HTML <div>，长文本会被浏览器按节点宽度自动折行；
-		   这里用 white-space:nowrap 强制单行，节点宽度由 mermaid 按内容自动撑开。 */
+		/* Mermaid 节点标签：禁止换行 + 禁止被截。
+		   htmlLabels 默认用 foreignObject+HTML <div>，长文本会被 mermaid 的 maxWidth(默认≈234)、
+		   foreignObject 宽度或容器裁切。两道兜底：
+		     1) nowrap 强制单行；
+		     2) text-overflow:clip + overflow:visible 避免被 ellipsis / clip；
+		     3) max-width:none 让 div 宽度完全按内容自适应。
+		   与下方 mermaid.initialize({ flowchart:{node:{maxWidth:1500}} }) 配合，
+		   解决「长文字被右截、br 双行撑高、字变小看不清」三个常见问题。 */
+		.mermaid foreignObject {
+			overflow: visible !important;
+		}
 		.mermaid foreignObject div {
 			white-space: nowrap !important;
+			text-overflow: clip !important;
+			max-width: none !important;
+			width: auto !important;
+			overflow: visible !important;
 		}
 	</style>
 </head>
@@ -165,7 +177,7 @@
     <!--Mermaid 图表渲染：加载 mermaid 并把文档内 ```mermaid 代码块转为 SVG-->
     <script src="//cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
     <script>
-        mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+        mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose', flowchart: { node: { maxWidth: 1500 } } });
         function renderMermaid() {
             if (typeof mermaid === 'undefined') return;
             document.querySelectorAll('pre > code.language-mermaid').forEach(function (code) {
