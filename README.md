@@ -1,5 +1,7 @@
 # 媒体创作者手册
 
+在线阅读：[https://jiangjihui.github.io/media-creator-docs](https://jiangjihui.github.io/media-creator-docs)
+
 > 摄影 · 影视制作 · 自媒体运营 的个人知识库。
 
 ## 板块索引

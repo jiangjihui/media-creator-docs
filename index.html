@@ -35,6 +35,8 @@
 				} else if (darkLink.parentNode) {
 					darkLink.parentNode.removeChild(darkLink);
 				}
+				// 同步 data-theme 到 <html>，使内联 SVG 的 var(--svg-*) 随之翻转
+				document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
 			}
 			// 同步导航栏按钮文案
 			function syncLabel() {
@@ -76,6 +78,27 @@
 		:root {
 			/* 移动端/触屏设备：内容区占满宽度 */
 			--content-max-width: 90%;
+			/* 内联 SVG 概念图主题变量：浅色默认值。
+			   SVG 内用 var(--svg-*) 取色，随站点明暗主题翻转（见下方 dark 覆盖块）。 */
+			--svg-bg: #ffffff;
+			--svg-border: #e2e8f0;
+			--svg-fg: #0f172a;
+			--svg-muted: #475569;
+			--svg-accent: #2563eb;
+			--svg-accent-2: #f59e0b;
+			--svg-grid: #cbd5e1;
+			--svg-sky: #eef2f7;
+		}
+		/* 暗色主题：覆盖 SVG 变量为深底浅字 */
+		html[data-theme="dark"] {
+			--svg-bg: #1e293b;
+			--svg-border: #334155;
+			--svg-fg: #e2e8f0;
+			--svg-muted: #94a3b8;
+			--svg-accent: #60a5fa;
+			--svg-accent-2: #fbbf24;
+			--svg-grid: #475569;
+			--svg-sky: #0f172a;
 		}
 		@media (pointer: fine) and (min-width: 1200px) {
 			:root {
@@ -162,12 +185,17 @@
         // 注意：必须往现有 plugins 数组【追加】，不能整体覆盖（Object.assign 重写 plugins 会冲掉
         // search.min.js 注册的搜索插件，导致侧边栏搜索框消失）。search / copy-code 等插件均通过
         // window.$docsify.plugins 注册，这里合并而非替换。
-        window.$docsify.plugins = (window.$docsify.plugins || []).concat([function (hook) {
+    
+
+    window.$docsify.plugins = (window.$docsify.plugins || []).concat([function (hook) {
             hook.doneEach(function () {
                 setTimeout(renderMermaid, 0);
             });
         }]);
     </script>
+
+
+    <script src="assets/wb-interactive.js"></script>
 </body>
 
 </html>
