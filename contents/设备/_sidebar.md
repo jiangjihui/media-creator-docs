@@ -16,6 +16,7 @@
   - [尼康 D7100](contents/设备/单品档案/相机/NIKON-D7100.md)
   - [尼康 F801](contents/设备/单品档案/相机/NIKON-F801.md)
   - [美能达 α7700i](contents/设备/单品档案/相机/MINOLTA-a7700i.md)
+  - [索尼 NEX-C3](contents/设备/单品档案/相机/SONY-NEX-C3.md)
 
 - 单品档案 · 摄像机
 
