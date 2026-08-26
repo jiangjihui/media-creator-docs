@@ -1,6 +1,42 @@
 - 软件
 
   - [总览](contents/软件/README.md)
-  - [剪辑调色软件](contents/软件/剪辑调色软件.md)
-  - [修图软件](contents/软件/修图软件.md)
+
+- 视频
+
+  - 剪辑与调色
+
+    - [总览](contents/软件/视频/剪辑与调色/总览.md)
+    - [DaVinci](contents/软件/视频/剪辑与调色/DAVINCI.md)
+
+  - 播放
+
+    - [总览](contents/软件/视频/播放/总览.md)
+    - [VLC](contents/软件/视频/播放/VLC.md)
+    - [mpv](contents/软件/视频/播放/MPV.md)
+
+- 音频
+
+  - 录音与编辑
+
+    - [总览](contents/软件/音频/录音与编辑/总览.md)
+
+  - 播放与转码
+
+    - [总览](contents/软件/音频/播放与转码/总览.md)
+
+- 图片
+
+  - 修图与RAW
+
+    - [总览](contents/软件/图片/修图与RAW/总览.md)
+
+  - 矢量与设计
+
+    - [总览](contents/软件/图片/矢量与设计/总览.md)
+
+  - 看图与管理
+
+    - [总览](contents/软件/图片/看图与管理/总览.md)
+
 
