@@ -23,3 +23,7 @@
   - [松下 NV-GS15](contents/设备/单品档案/摄像机/PANASONIC-NV-GS15.md)
   - [松下 NV-GS5](contents/设备/单品档案/摄像机/PANASONIC-NV-GS5.md)
 
+- 单品档案 · 运动相机与无人机
+
+  - [大疆 Osmo Nano](contents/设备/单品档案/运动相机与无人机/DJI-Osmo-Nano.md)
+
