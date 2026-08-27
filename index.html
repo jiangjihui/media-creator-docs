@@ -160,6 +160,10 @@
             loadNavbar: true,
             // 加载自定义侧边栏
             loadSidebar: true,
+            // 开启相对路径：markdown 正文里的 ./ ../ 与裸文件名链接按"当前文件所在目录"解析，
+            // 正文可写短链（GIMP.md / ../X.md）而不必写全 contents/... 层级；
+            // 侧栏/导航栏用根绝对（/contents/...，带前导斜杠）避免被叠加当前目录。
+            relativePath: true,
             // 全文搜索插件
             search: 'auto', // 默认值
             // 开启文档自身目录（左侧 TOC，只显示到 ## H2，H3/H4 不进侧栏）
