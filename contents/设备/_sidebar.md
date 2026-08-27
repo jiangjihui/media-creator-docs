@@ -38,6 +38,10 @@
   - [优篮子 UA20](/contents/设备/单品档案/灯光/优篮子-UA20.md)
   - [影器 GC150](/contents/设备/单品档案/灯光/影器-GC150.md)
 
+- 音频
+
+  - [DJI Mic Mini](/contents/设备/单品档案/音频/DJI-Mic-Mini.md)
+
 - 支撑与稳定
 
   - [智云 WEEBILL S](/contents/设备/单品档案/支撑与稳定/智云-WEEBILL-S.md)
