@@ -26,4 +26,5 @@
 - 单品档案 · 运动相机与无人机
 
   - [大疆 Osmo Nano](contents/设备/单品档案/运动相机与无人机/DJI-Osmo-Nano.md)
+  - [大疆 Mini 2](contents/设备/单品档案/运动相机与无人机/DJI-Mini-2.md)
 
