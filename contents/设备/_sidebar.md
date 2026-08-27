@@ -17,6 +17,7 @@
   - [尼康 F801](contents/设备/单品档案/相机/NIKON-F801.md)
   - [美能达 α7700i](contents/设备/单品档案/相机/MINOLTA-a7700i.md)
   - [索尼 NEX-C3](contents/设备/单品档案/相机/SONY-NEX-C3.md)
+  - [富士 WIDE 400 拍立得](contents/设备/单品档案/相机/FUJIFILM-INSTAX-WIDE400.md)
 
 - 摄像机
 
