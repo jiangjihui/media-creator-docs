@@ -151,5 +151,5 @@ RAW 显影（Lightroom / Capture One / darktable）→ 导出 16bit TIFF → GIM
 ### 延伸阅读
 
 - 同角色对比见 [修图与 RAW · 总览](总览.md)。
-- 看图 / 批处理衔接见 [IrfanView](../看图与管理/IRFANVIEW.md)。
-- RAW 显影选型见 [摄影 · 器材](../../../摄影/器材/相机机身.md)；官方下载与文档：[gimp.org/downloads](https://www.gimp.org/downloads/)。
+- 看图 / 批处理衔接见 [IrfanView](/contents/软件/图片/看图与管理/IRFANVIEW.md)。
+- RAW 显影选型见 [摄影 · 器材](/contents/摄影/器材/相机机身.md)；官方下载与文档：[gimp.org/downloads](https://www.gimp.org/downloads/)。
