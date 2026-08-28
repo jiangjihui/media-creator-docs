@@ -15,6 +15,11 @@
     - [VLC](/contents/软件/视频/播放/VLC.md)
     - [mpv](/contents/软件/视频/播放/MPV.md)
 
+  - 录制与推流
+
+    - [总览](/contents/软件/视频/录制与推流/总览.md)
+    - [OBS](/contents/软件/视频/录制与推流/OBS.md)
+
 - 音频
 
   - 录音与编辑
@@ -24,6 +29,7 @@
   - 播放与转码
 
     - [总览](/contents/软件/音频/播放与转码/总览.md)
+    - [AIMP](/contents/软件/音频/播放与转码/AIMP.md)
 
   - 图片
 
