@@ -4,6 +4,6 @@
 - [设备](/contents/设备/)
 - [软件](/contents/软件/)
 - [自媒体](/contents/自媒体运营/)
-- [实战案例](/contents/实战案例/)
+- [交付与复盘](/contents/交付与复盘/)
 - [学习资源](/contents/学习资源/)
 - <span id="themeToggle" onclick="toggleTheme()" title="切换 自动 / 浅色 / 深色">🌗 自动</span>

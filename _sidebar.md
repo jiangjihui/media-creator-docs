@@ -3,5 +3,5 @@
 - [自媒体运营](/contents/自媒体运营/)
 - [设备](/contents/设备/)
 - [软件](/contents/软件/)
-- [实战案例](/contents/实战案例/)
+- [交付与复盘](/contents/交付与复盘/)
 - [学习资源](/contents/学习资源/)
