@@ -20,6 +20,11 @@
     - [总览](/contents/软件/视频/录制与推流/总览.md)
     - [OBS](/contents/软件/视频/录制与推流/OBS.md)
 
+  - 转码与压缩
+
+    - [总览](/contents/软件/视频/转码与压缩/总览.md)
+    - [HandBrake](/contents/软件/视频/转码与压缩/HANDBRAKE.md)
+
 - 音频
 
   - 录音与编辑
