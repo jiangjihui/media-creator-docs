@@ -295,10 +295,4 @@ Fusion 是 Resolve 内的节点合成引擎，复杂特效不用离开软件去�
 - 频繁换机/团队协作？→ 导出键盘映射与 Gallery 预设备份；考虑 Blackmagic Cloud 工程。
 - 调色老发灰/跨软件不一致？→ 改用 RCM/CST 色彩管理，别裸调。
 
-### 延伸阅读
-
-- 选型对比见 [剪辑与调色 · 总览](总览.md)。
-- 后期工艺见 [摄像 · 影视制作 · 剪辑与调色](/contents/摄像/影视制作/剪辑与调色.md)。
-- 官方培训与手册入口：[Blackmagic 培训页](https://www.blackmagicdesign.com/products/davinciresolve/training) / [支持页(手册)](https://www.blackmagicdesign.com/support/)。
-- 第三方资源精选索引（社区长文，内含上述频道链接）：[Writing with a Camera](https://www.writingwithacamera.com/Handouts/DaVinci-Resolve) · [CineD 新手资源指南](https://www.cined.com/davinci-resolve-just-getting-started-here-are-the-best-resources-to-get-you-going/) · [No Film School 免费培训书盘点](https://nofilmschool.com/davinci-resolve-training-books)。
-- 付费深修：[Mixing Light](https://mixinglight.com/)（在职调色师）· [MZed](https://www.mzed.com/)（Ollie Kenchington 课程）。
+> 工具之外的流程：粗剪、精剪与调色顺序 [影视制作 · 剪辑与调色](/contents/摄像/影视制作/剪辑与调色.md)

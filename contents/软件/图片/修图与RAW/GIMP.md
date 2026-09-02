@@ -139,17 +139,11 @@ RAW 显影（Lightroom / Capture One / darktable）→ 导出 16bit TIFF → GIM
 - "免费 = 低质"——GIMP 是志愿者主导的成熟项目，与 PS 同量级功能覆盖。
 - "必须学所有工具"——先掌握图层 / 蒙版 / 选区 / 曲线四条主线即可上手。
 
-## 自查与延伸
-
-### 自查清单
+## 自查清单
 
 - 要印刷 CMYK？→ 别用 GIMP 直接做印前，转 PS / 专用流程。
 - 要批量转格式 / 加水印？→ 用 IrfanView / BIMP 插件。
 - 要开 PSD？→ 3.0 导出改善但仍非 100% 还原图层样式，验收前先核对。
 - 要非破坏编辑？→ 用图层 fx 效果栈，别直接提交滤镜。
 
-### 延伸阅读
-
-- 同角色对比见 [修图与 RAW · 总览](总览.md)。
-- 看图 / 批处理衔接见 [IrfanView](/contents/软件/图片/看图与管理/IRFANVIEW.md)。
-- RAW 显影选型见 [摄影 · 器材](/contents/摄影/器材/相机机身.md)；官方下载与文档：[gimp.org/downloads](https://www.gimp.org/downloads/)。
+> RAW 从哪来、画幅与传感器意味着什么：[摄影 · 器材](/contents/摄影/器材/相机机身.md)
